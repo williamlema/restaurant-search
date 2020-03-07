@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+        <a class="float-right badge badge-secondary" (click)="signOut()">SingOut</a>
+        <h4 class="card-title mb-4 mt-1">Search Restaurant</h4>
+        <form [formGroup]="searchForm">
+            <div class="form-group">
+                <label for="inputCity">City</label>
+                <input formControlName="city" class="form-control" type="text" id="inputCity"
+                    placeholder="Enter city location">
+            </div>
+            <div class="form-group">
+                <button (click)="search()" class="btn btn-primary btn-block"> Seacrh by City</button>
+            </div>
+            <div class="form-group">
+                <button (click)="searchByGeoLocation()" class="btn btn-primary btn-block"> Seacrh by GeoLocation</button>
+            </div>
+        </form>
+        <table class="table table-striped">
+            <tbody>
+                <tr *ngFor="let r of restaurants">
+                    <td>{{ r.name }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

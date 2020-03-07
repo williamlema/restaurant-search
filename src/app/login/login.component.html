@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+        <a class="float-right badge badge-secondary" routerLink="/signup">SignUp</a>
+        <h4 class="card-title mb-4 mt-1">LogIn Page</h4>
+        <form [formGroup]="credentialForm">
+            <div class="form-group">
+                <label for="inputUsername">Email</label>
+                <input formControlName="email" class="form-control" type="text" id="inputEmail"
+                    placeholder="Enter your email address">
+            </div>
+            <div class="form-group">
+                <label for="inputPassword">Password</label>
+                <input formControlName="password" class="form-control" type="password" id="inputPassword"
+                    placeholder="Enter your password">
+            </div>
+            <div class="form-group">
+                <button (click)="signIn()" class="btn btn-primary btn-block"> SignIn </button>
+            </div>
+        </form>
+        <ngb-alert [dismissible]="false" *ngIf="showMessage">
+            <strong>Warning!</strong> Invalid form.
+        </ngb-alert>
+    </div>
+</div>
